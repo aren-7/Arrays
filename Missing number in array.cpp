@@ -12,16 +12,20 @@ class Solution{
   public:
     int missingNumber(vector<int>& array, int n) {
         // Your code goes here
+        // Sorting the array
         sort(array.begin(),array.end());
         int i;
+        // Tracking the missing number with for loop
         for(i=0;i<n;i++)
         {
             int temp=i;
+            // If missing number is there then break the loop
             if(array[i]!=(temp+1))
             {
                 break;
             }
         }
+        // Since index is starting from 0, thus adding 1
         return i+1;
     }
 };
